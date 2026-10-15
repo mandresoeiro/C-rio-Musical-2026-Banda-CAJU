@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#06153c">
+<title>Círio Musical 2026 | Show Banda CAJU — Contagem ao Vivo</title>
+<meta name="description" content="Acompanhe a contagem regressiva do Show Banda CAJU, 19 de outubro de 2026, às 20h (Belém).">
+<meta property="og:type" content="website"><meta property="og:title" content="🎸 Círio Musical 2026 — Show Banda CAJU"><meta property="og:description" content="⏳ Contagem regressiva ao vivo até 19/10 às 20h. Venha celebrar!">
+<meta property="og:image" content="https://mandresoeiro.github.io/C-rio-Musical-2026-Banda-CAJU/arte-caju.png">
+<meta property="og:url" content="https://mandresoeiro.github.io/C-rio-Musical-2026-Banda-CAJU/">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#030c27;color:white;font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+main{max-width:700px;margin:auto;padding:10px 10px 28px}
+.poster{position:relative;width:100%;aspect-ratio:1024/1536;overflow:hidden;border-radius:15px;background:radial-gradient(ellipse at 60% 20%,#b335ad 0%,#153e97 38%,#06102d 84%);box-shadow:0 12px 36px #0009}
+.art{display:block;width:100%;height:100%;object-fit:cover}
+.cover{position:absolute;left:2.5%;width:95%;top:56.9%;height:22%;background:linear-gradient(#021037f5,#051341 10%,#03143d 90%,#041438dd);border-radius:10px;display:flex;flex-direction:column;justify-content:center;gap:3%;padding:1.5%}
+.live{text-transform:uppercase;text-align:center;font-size:clamp(9px,2.25vw,16px);letter-spacing:.22em;font-weight:800}.live:before{content:"●";color:#31ff91;margin-right:7px;animation:blink 1s infinite}@keyframes blink{50%{opacity:.15}}
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.2%}
+.tile{border:2px solid #43baff;border-radius:11px;background:linear-gradient(135deg,#073783aa,#060726);text-align:center;padding:9% 0 7%;box-shadow:0 0 12px #008eff8c;min-width:0}
+.tile:nth-child(2){border-color:#ca6cff;box-shadow:0 0 12px #b93aff99}.tile:nth-child(3){border-color:#ffc541;box-shadow:0 0 12px #ffad1599}
+.num{display:block;font-size:clamp(25px,9vw,68px);font-weight:900;line-height:1.18;font-variant-numeric:tabular-nums;letter-spacing:-.04em}.lab{font-size:clamp(8px,2vw,14px);font-weight:800;letter-spacing:.03em}
+.when{text-align:center;font-size:clamp(8px,1.9vw,15px);font-weight:750}
+.share{position:absolute;top:81%;left:16%;width:68%;height:6.5%;border-radius:100px;display:flex;align-items:center;justify-content:center;color:white;text-decoration:none;text-align:center;font-size:clamp(11px,2.55vw,19px);font-weight:900;background:#06b74d;border:2px solid #6af9aa;box-shadow:0 0 20px #1bdf65;transition:transform .2s}.share:hover,.share:focus{transform:scale(1.03);outline:2px solid white}.share:active{transform:scale(.98)}
+.fallback{position:absolute;inset:5% 5% 50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none}.fallback h1{font-size:clamp(22px,7vw,52px);margin:0;color:#ffcb55}.fallback p{font-size:clamp(16px,4vw,29px);font-weight:800}.poster:has(.art:not([hidden])) .fallback{display:none}
+.notice{text-align:center;font-size:13px;color:#d8e6ff;margin:16px 0 0}.after{display:none;font-weight:900;text-align:center;color:#ffe07e}.finished .after{display:block}.finished .tiles{display:none}
+@media(min-width:710px){.num{font-size:62px}.lab{font-size:14px}.when{font-size:15px}.live{font-size:16px}.share{font-size:19px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<main><section class="poster" aria-label="Cartaz do Círio Musical 2026 com contador regressivo">
+<img class="art" id="art" src="arte-caju.png" alt="Círio Musical 2026: Show da Banda CAJU, todos os integrantes, 19 de outubro às 20h" onerror="this.hidden=true">
+<div class="fallback"><h1>CÍRIO MUSICAL 2026</h1><p>🎶 Show Banda CAJU</p><p>19 de outubro • 20h • Belém</p></div>
+<div class="cover" id="counter" aria-live="off"><div class="live">Contagem ao vivo</div><div class="tiles">
+<div class="tile"><span class="num" id="days">--</span><span class="lab">DIAS</span></div>
+<div class="tile"><span class="num" id="hours">--</span><span class="lab">HORAS</span></div>
+<div class="tile"><span class="num" id="minutes">--</span><span class="lab">MINUTOS</span></div>
+<div class="tile"><span class="num" id="seconds">--</span><span class="lab">SEGUNDOS</span></div>
+</div><div class="when">19 DE OUTUBRO DE 2026 · 20H · BELÉM–PA</div><div class="after">🎉 É HORA DO SHOW! VEM CELEBRAR!</div></div>
+<a class="share" id="share" href="https://wa.me/" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar a contagem no WhatsApp">☏ &nbsp; COMPARTILHAR NO WHATSAPP ↗</a>
+</section><p class="notice">O relógio se atualiza automaticamente a cada segundo enquanto esta página estiver aberta.</p></main>
+<script>
+const deadline=Date.parse('2026-10-19T20:00:00-03:00');
+const el=id=>document.getElementById(id);
+function tick(){const total=Math.max(0,Math.floor((deadline-Date.now())/1000));const values=[Math.floor(total/86400),Math.floor(total%86400/3600),Math.floor(total%3600/60),total%60];['days','hours','minutes','seconds'].forEach((id,i)=>{el(id).textContent=String(values[i]).padStart(2,'0')});el('counter').classList.toggle('finished',total===0)}
+tick();setInterval(tick,250);
+const url=location.href.split('#')[0].split('?')[0];
+const message='🎸 *CÍRIO MUSICAL 2026 — SHOW BANDA CAJU!*\n🙏 Uma noite de fé, música e louvor à Nossa Senhora de Nazaré!\n📅 *19 de outubro de 2026* | 🕗 *20h*\n⏳ Veja a contagem regressiva AO VIVO:\n'+url;
+el('share').href='https://wa.me/?text='+encodeURIComponent(message);
+</script></body></html>
